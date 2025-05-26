@@ -1,9 +1,8 @@
 import "./App.scss";
-import { LiveAPIProvider } from "./contexts/LiveAPIContext";
-import SidePanel from "./components/side-panel/SidePanel";
+import {useLiveAPIContext } from "./contexts/LiveAPIContext";
 import ControlTray from "./components/control-tray/ControlTray";
-import { Altair } from "./components/altair/Altair";
-import VoiceSelector from "./components/settings-dialog/VoiceSelector";
+import { useState } from "react";
+import cn from "classnames";
 
 const API_KEY = process.env.REACT_APP_GEMINI_API_KEY as string;
 if (typeof API_KEY !== "string") {
@@ -11,12 +10,19 @@ if (typeof API_KEY !== "string") {
 }
 
 function App() {
+  const { connected } = useLiveAPIContext();
+  const [open, setOpen] = useState(true);
 
   return (
     <div className="App">
-      <LiveAPIProvider options={{ apiKey: API_KEY }}>
+     
         <div className="streaming-console">
-          <SidePanel />
+          {/* <SidePanel /> */}
+          <div className={cn("streaming-indicator", { connected })}>
+            {connected
+              ? `🔵${open ? " Streaming" : ""}`
+              : `⏸️${open ? " Paused" : ""}`}
+          </div>
           <main>
             <ControlTray
               enableEditingSettings={true}
@@ -24,7 +30,7 @@ function App() {
             </ControlTray>
           </main>
         </div>
-      </LiveAPIProvider>
+      
     </div>
   );
 }
