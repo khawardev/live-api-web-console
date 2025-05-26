@@ -3,7 +3,7 @@
   color: var(--Neutral-90);
   width: 193px;
   height: 30px;
-
+border-radius: 30px;
   .react-select__single-value {
     color: var(--Neutral-90);
   }
@@ -28,7 +28,7 @@
     background: var(--Neutral-30);
   }
 
-  .react-select__option--is-focused: {
+  .react-select__option--is-focused {
     background: var(--Neutral-30);
   }
 }

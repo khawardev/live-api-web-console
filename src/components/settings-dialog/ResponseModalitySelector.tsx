@@ -29,11 +29,11 @@ export default function ResponseModalitySelector() {
   );
 
   return (
-    <div className="select-group">
-      <label htmlFor="response-modality-selector">Response modality</label>
+    <div className="select-group ">
+      {/* <label htmlFor="response-modality-selector">Response modality</label> */}
       <Select
         id="response-modality-selector"
-        className="react-select"
+        className="react-select "
         classNamePrefix="react-select"
         styles={{
           control: (baseStyles) => ({

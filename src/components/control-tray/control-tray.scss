@@ -12,7 +12,7 @@
   transition: all 0.2s ease-in-out;
   width: 48px;
   height: 48px;
-  border-radius: 18px;
+  border-radius: 138px;
   border: 1px solid rgba(0, 0, 0, 0);
   user-select: none;
   cursor: pointer;
@@ -86,7 +86,7 @@
     background-color: var(--Red-500);
     width: calc(100% + var(--volume) * 2);
     height: calc(100% + var(--volume) * 2);
-    border-radius: 24px;
+    border-radius: 138px;
     transition: all 0.02s ease-in-out;
   }
 }
@@ -129,7 +129,7 @@
     gap: 4px;
 
     .connection-button-container {
-      border-radius: 27px;
+      border-radius: 138px;
       border: 1px solid var(--Neutral-30);
       background: var(--Neutral-5);
       padding: 10px;
@@ -152,7 +152,7 @@
 .actions-nav {
   background: var(--Neutral-5);
   border: 1px solid var(--Neutral-30);
-  border-radius: 27px;
+  border-radius: 138px;
   display: inline-flex;
   gap: 12px;
   align-items: center;

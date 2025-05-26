@@ -9,12 +9,13 @@
 }
 
 .settings-dialog {
+  
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
   height: 70px;
-
   .connected-indicator {
     font-style: italic;
   }
@@ -70,10 +71,10 @@
     padding: 0;
     margin: 0;
     position: fixed;
-    top: -400px;
+    top: -300px;
     right: 0;
     width: 696px;
-    height: 593px;
+    height: 393px;
     transform: translate(-25%, -50%);
   }
 
