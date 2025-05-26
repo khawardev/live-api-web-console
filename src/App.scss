@@ -55,7 +55,7 @@
 
 body {
   font-family: "Space Mono", monospace;
-  background: var(--Neutral-30);
+  background: white;
 }
 
 .material-symbols-outlined {
@@ -121,7 +121,12 @@ body {
   display: flex;
   height: 100vh;
   width: 100vw;
+  gap: 10px;
+@media (max-width: 768px) {
+  display: block;
+  gap: 10px;
 
+}
   a,
   a:visited,
   a:active {

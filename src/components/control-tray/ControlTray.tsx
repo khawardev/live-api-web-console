@@ -5,7 +5,6 @@ import { useLiveAPIContext } from "../../contexts/LiveAPIContext";
 import { AudioRecorder } from "../../lib/audio-recorder";
 import AudioPulse from "../audio-pulse/AudioPulse";
 import "./control-tray.scss";
-import SettingsDialog from "../settings-dialog/SettingsDialog";
 
 function ControlTray({
   children,
@@ -86,7 +85,7 @@ function ControlTray({
         </div>
         <span className="text-indicator">Streaming</span>
       </div>
-      {enableEditingSettings ? <SettingsDialog /> : ""}
+      {/* {enableEditingSettings ? <SettingsDialog /> : ""} */}
     </section>
   );
 }

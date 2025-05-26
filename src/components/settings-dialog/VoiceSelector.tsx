@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import Select from "react-select";
 import { useLiveAPIContext } from "../../contexts/LiveAPIContext";
-
+import '../settings-dialog/LanguageSelector.scss';
 const voiceOptions = [
   { value: "Puck", label: "Puck" },
   { value: "Charon", label: "Charon" },
@@ -44,39 +43,29 @@ export default function VoiceSelector() {
 
   return (
     <div className="select-group">
-      {/* <label htmlFor="voice-selector">Voice</label> */}
-      <Select
-        id="voice-selector"
-        className="react-select"
-        classNamePrefix="react-select"
-        styles={{
-          control: (baseStyles) => ({
-            ...baseStyles,
-            background: "var(--Neutral-15)",
-            color: "var(--Neutral-90)",
-            minHeight: "33px",
-            maxHeight: "33px",
-            border: 0,
-          }),
-          option: (styles, { isFocused, isSelected }) => ({
-            ...styles,
-            backgroundColor: isFocused
-              ? "var(--Neutral-30)"
-              : isSelected
-              ? "var(--Neutral-20)"
-              : undefined,
-          }),
-        }}
-        value={selectedOption}
-        defaultValue={selectedOption}
-        options={voiceOptions}
+
+      <select
+        id="language-select"
+        value={selectedOption?.value || ""}
+
         onChange={(e) => {
-          setSelectedOption(e);
-          if (e) {
-            updateConfig(e.value);
+          const value = e.target.value;
+          const option = voiceOptions.find((opt) => opt.value === value) || null;
+          setSelectedOption(option);
+          if (option) {
+            updateConfig(option.value);
           }
         }}
-      />
+
+        
+        className="language-selector__dropdown"
+      >
+        {voiceOptions.map((option) => (
+          <option key={option.value} value={option.value}>
+           {option.label}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }
