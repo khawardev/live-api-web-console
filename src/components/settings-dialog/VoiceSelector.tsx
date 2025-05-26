@@ -45,6 +45,7 @@ export default function VoiceSelector() {
     <div className="select-group">
 
       <select
+        style={{ margin: '0px 0px 10px 0px' }}
         id="language-select"
         value={selectedOption?.value || ""}
 
