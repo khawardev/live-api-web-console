@@ -1,6 +1,9 @@
+import { useLiveAPIContext } from '../../contexts/LiveAPIContext';
 import './LanguageSelector.scss';
 
-const LanguageSelector = ({ targetLanguage, onLanguageChange }) => {
+const LanguageSelector = ({ targetLanguage, onLanguageChange }:any) => {
+    const {  connected } = useLiveAPIContext();
+
     const languageOptions = [
         { value: "Hindi", label: "हिंदी (Hindi)", flag: "🇮🇳" },
         { value: "Spanish", label: "Español (Spanish)", flag: "🇪🇸" },
@@ -19,6 +22,7 @@ const LanguageSelector = ({ targetLanguage, onLanguageChange }) => {
     return (
         <div >
             <select
+                disabled={connected}
                 style={{margin:'0px 0px 10px 0px'}}
                 id="language-select"
                 value={targetLanguage}

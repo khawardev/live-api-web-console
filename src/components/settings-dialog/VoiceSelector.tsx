@@ -10,7 +10,7 @@ const voiceOptions = [
 ];
 
 export default function VoiceSelector() {
-  const { config, setConfig } = useLiveAPIContext();
+  const { config, setConfig, connected } = useLiveAPIContext();
 
   useEffect(() => {
     const voiceName =
@@ -45,6 +45,7 @@ export default function VoiceSelector() {
     <div className="select-group">
 
       <select
+        disabled={connected}
         style={{ margin: '0px 0px 10px 0px' }}
         id="language-select"
         value={selectedOption?.value || ""}
